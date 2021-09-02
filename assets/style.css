@@ -1,0 +1,148 @@
+:root {
+    --dark-border: #344861;
+    --light-border: #bec6d4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Source Sans Pro,sans-serif;
+    font-size: 25px;
+    transition: .2s ease;
+}
+.sudoku {
+    width: 100%;
+}
+h1 {
+    text-align: center;
+    padding-top: .5em;
+    font-size: 38px;
+}
+.difficulty {
+    margin: auto;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .6em;
+}
+.difficulty button {
+    padding: 4px 10px;
+}
+
+.difficulty button:hover {
+    border: 1px solid white;
+    background-color: rgb(221, 221, 0);
+    color: white;
+}
+.container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap : 2.5em;
+}
+.btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+.btns button {
+    padding: 4px 10px;
+}
+.btns button:hover {
+    background-color: rgb(221, 221, 0);
+    color: white;
+    border: 1px solid white;
+}
+
+.container table {
+    width: 564px;
+    height: 564px;
+    border: 2px solid var(--dark-border);
+    border-collapse: collapse;
+}
+.container .board input{
+    width: 60px;
+    height: 60px;
+    outline: none;
+    text-align: center;
+}
+table td input {
+    border: 1px solid var(--light-border);    
+}
+table td:nth-child(3n) {
+    border-right: 1px solid var(--dark-border);
+}
+table .row-3 td, .row-6 td {
+    border-bottom: 1px solid var(--dark-border);
+}
+input {
+    caret-color: transparent;
+    font-weight: 550;
+    color: rgb(0, 0, 0);
+}
+input:focus {
+    background-color: rgb(187,222,251);
+    border: 1px solid rgb(121, 195, 255);
+
+    /* border: 1px solid greenyellow; */
+}
+input:not(.fixed):hover {
+    background-color: rgb(187,222,251);
+}
+.fixed {
+    /* color: rgb(78, 78, 78); */
+    background-color: rgb(235,235,228);
+    cursor: inherit;
+}
+.difficulty button:focus{
+    background-color: rgb(221, 221, 0);
+
+}
+
+.colorblue:not(.selected, .fixed){
+    background-color: rgb(187,222,251);
+}
+
+.selected{
+    background-color: rgb(226,231,237);
+}
+
+.board .repeating {
+    background-color: rgba(255, 0, 0, 0.61);
+}
+
+.victory1, .loser1 {
+    position: absolute;
+    width: 20%;
+    display: none;
+    top: 60%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+.victory2, .loser2{
+    position: absolute;
+    width: 20%;
+    display: none;
+    top: 60%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.success, .tryagain  {
+    display: inline-block;
+    animation: animation 4s infinite;
+}
+
+@keyframes animation {
+    from {
+        top:0px;
+    }
+    to {
+        top: 60%;
+    }
+    
+}
+
+
